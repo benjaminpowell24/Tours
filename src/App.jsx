@@ -7,7 +7,10 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [data, setData] = useState(null)
 
-  console.log(data)
+  const removeTour = (id) => {
+    const filteredTours = data.filter((tour) => tour.id !== id)
+    setData(filteredTours)
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,7 +25,7 @@ const App = () => {
 
   return (
     <section>
-      <Tours tours={data} />
+      <Tours tours={data} removeTour={removeTour} />
     </section>
   )
 }
