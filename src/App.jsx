@@ -28,7 +28,7 @@ const App = () => {
   }
 
   return (
-    <section>
+    <main>
       <h2 className="title ">Our Tours</h2>
       <div className="title-underline"></div>
       {data.length ? (
@@ -40,7 +40,7 @@ const App = () => {
           </button>
         </div>
       )}
-    </section>
+    </main>
   )
 }
 export default App
