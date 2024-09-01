@@ -12,6 +12,10 @@ const App = () => {
     setData(filteredTours)
   }
 
+  const resetTours = () => {
+    setData(tours)
+  }
+
   useEffect(() => {
     setTimeout(() => {
       setData(tours)
@@ -25,7 +29,17 @@ const App = () => {
 
   return (
     <section>
-      <Tours tours={data} removeTour={removeTour} />
+      <h2 className="title ">Our Tours</h2>
+      <div className="title-underline"></div>
+      {data.length ? (
+        <Tours tours={data} removeTour={removeTour} />
+      ) : (
+        <div style={{ textAlign: 'center', margin: 5 }}>
+          <button className="btn" onClick={resetTours}>
+            Reset
+          </button>
+        </div>
+      )}
     </section>
   )
 }
