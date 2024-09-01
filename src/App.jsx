@@ -5,7 +5,9 @@ import Loading from './components/Loading'
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
+
+  console.log(data)
 
   useEffect(() => {
     setTimeout(() => {
@@ -20,7 +22,7 @@ const App = () => {
 
   return (
     <section>
-      <Tours {...data} />
+      <Tours tours={data} />
     </section>
   )
 }
